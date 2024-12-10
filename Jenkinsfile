@@ -1,21 +1,20 @@
 pipeline {
     agent any
-    stages {
-        stage('Git Clone') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Srivaishnavi08/week4'
-            }
+    script('Git clone'){
+        steps{
+            git branch: main, url :https://github.com/Srivaishnavi08;
         }
-        stage('Java Execution') {
-            steps {
-               bat 'javac hello.java'
-                bat 'java hello'
-            }
+    }
+    scrpit('Java Execution'){
+        steps{
+            bat 'javac hello.java'
+            bat 'java hello'
         }
-        stage('Python Execution') {
-            steps {
-                bat 'python say.py'
-            }
+    }
+    script('Python execution'){
+        steps{
+            bat 'python say.py'
         }
     }
 }
+            
