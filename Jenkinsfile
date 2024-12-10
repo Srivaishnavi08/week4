@@ -3,7 +3,7 @@ pipeline {
     stages{
         stage('Git clone'){
             steps{
-                git branch: main, url :https://github.com/Srivaishnavi08;
+                git branch: 'main', url :'https://github.com/Srivaishnavi08'
             }
         }
         stage('Java Execution'){
